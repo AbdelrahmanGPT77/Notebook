@@ -100,7 +100,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+           background: url('images/notebook-bg.jpg') no-repeat center center/cover;
             z-index: -2;
         }
         /* 3D Wallpaper: Floating 3D cubes/shapes for depth */
@@ -457,4 +457,5 @@ opacity: 0;
         }
         .product {
             animation: parallax 1s ease-out;
+
         }
