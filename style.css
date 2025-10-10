@@ -254,6 +254,8 @@
             transform: translateY(-3px) scale(1.05);
         }
 
+
+
         /* Footer */
     /* --- New Footer Style --- */
 .footer {
@@ -326,6 +328,87 @@
 
 .product-image img:hover {
     transform: scale(1.05);
+}
+
+/* /////////////////////// */
+
+.container {
+  padding: 1rem;
+}
+
+.slider-wrapper {
+  position: relative;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.slider {
+  display: flex;
+  width: 100%;
+  height: 60vh; /* 🔥 ارتفاع مناسب وواضح على الموبايل */
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  border-radius: 1rem;
+  box-shadow: 0 1.5rem 3rem -0.75rem rgba(0,0,0,0.3);
+}
+
+/* 🔥 إخفاء شريط التمرير */
+.slider::-webkit-scrollbar {
+  display: none;
+}
+.slider {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.slider img {
+  flex: 1 0 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* تخلي الصورة تملأ الفريم بدون فراغات */
+  object-position: center; /* تخلي الصورة مظبوطة في النص */
+  scroll-snap-align: start;
+  border-radius: 1rem;
+}
+
+
+
+/* ⚪ النقاط */
+.slider-nav {
+  display: flex;
+  column-gap: 1rem;
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.slider-nav a {
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  background-color: rgba(255,255,255,0.8);
+  transition: opacity 250ms ease, background 250ms ease;
+}
+
+.slider-nav a:hover {
+  background-color: #fff;
+  opacity: 1;
+}
+
+/* 📱 Responsive adjustments */
+@media (max-width: 768px) {
+  .slider {
+    height: 70vh; /* أكبر للموبايل */
+    border-radius: 0.8rem;
+  }
+
+  .slider-nav a {
+    width: 0.7rem;
+    height: 0.7rem;
+  }
 }
 
 .floating-bg {
@@ -459,3 +542,4 @@ opacity: 0;
             animation: parallax 1s ease-out;
 
         }
+
