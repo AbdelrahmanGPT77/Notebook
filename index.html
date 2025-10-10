@@ -69,9 +69,28 @@
                 <div class="price">$29.99</div>
                 <button class="buy-btn" onclick="addToCart()">Add to Cart</button>
             </div>
-            <div class="product-image">
-        <img src="notebook.jpg" alt=""/>
-    </div>
+       <section class="Containers">
+        <div class="slider-wrapper">
+            <div class="slider">
+                <img id="slide-1" src="notebook1.jpg" alt="">
+                <img id="slide-2" src="notebook2.jpg" alt="">
+                <img id="slide-3" src="notebook3.jpg" alt="">
+                <img id="slide-4" src="notebook.jpg" alt="">
+                <img id="slide-5"  src="notebook4.jpg" alt="">
+                <img id="slide-6" src="1 (4).jpg" alt="">
+            </div>
+            <div class="slider-nav">
+                <a href="#slide-1"></a>
+                <a href="#slide-2"></a>
+                <a href="#slide-3"></a>
+                <a href="#slide-4"></a>
+                <a href="#slide-5"></a>
+                <a href="#slide-6"></a>
+
+            </div>
+        </div>
+    </section>
+            
         </div>
     </section>
 
@@ -140,7 +159,35 @@
         notebook.addEventListener('mouseleave', () => {
             notebook.style.transform = 'rotateY(0deg) rotateX(0deg)';
         });
+        //////////////
+        
+        let currentSlide = 0;
+const slides = document.querySelectorAll('.slider img');
+const totalSlides = slides.length;
+
+document.querySelector('.next').addEventListener('click', nextSlide);
+document.querySelector('.prev').addEventListener('click', prevSlide);
+
+function showSlide(index) {
+  const slider = document.querySelector('.slider');
+  if (index >= totalSlides) currentSlide = 0;
+  else if (index < 0) currentSlide = totalSlides - 1;
+  else currentSlide = index;
+  slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+}
+
+function nextSlide() {
+  showSlide(currentSlide + 1);
+}
+
+function prevSlide() {
+  showSlide(currentSlide - 1);
+}
+
+// Auto slide every 4s
+setInterval(nextSlide, 4000);
     </script>
 </body>
 </html>
+
 
